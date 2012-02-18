@@ -1,0 +1,109 @@
+
+
+Hello dear penguins,
+
+on Saturday 18th February 2012 I reviewed this README-file:
+
+below you find the "old" README and the "old" intention of this code BIOS=RESET.c
+
+Now the project-name is "hummingbird", and new idea of this code is to make
+a damn-small-kernel out of it. It would be platform-independant, and cumbersome
+drivers for each hardware-piece would
+be soon not necessary any more.
+
+The main idea is to set each address in a chip/chip-set with boolean value TRUE. 
+The program needs to run only 1 single time. It makes a flash.
+
+The advantage is: programs are running with less bugs.
+The disadvantage is: any feature of your machine is switched on at same time.
+It would mean you are e.g. on-air with your machine everywhere.
+
+(further idea pops up: when it is soon known, in which address-space of UEFI
+the new boot-loader is written, we could overwrite this boot-loader with grub.) 
+
+Below you find the explanation of the code BIOS=RESET.c and if the damn-small-kernel
+would be written similiar like this code, it would be smaller than 25 kilobytes.
+
+Cheers.
+dschinn
+linux7430@gmail.com
+
+-----------------------------------------------------------
+
+
+
+
+
+
+Hello dear penguins,
+welcome to project "hummingbird" written in C
+
+this code is, when I am not wrong, revolutionary. It is a new program, to resolve
+bugs in some programs and configuration-errors in conf-files
+This program is ironing the "wrinkles" of Linux away.
+
+Before I make a debian-package of it, I want you to test this code.
+
+I had only the problem with a too dark screen on my notebook (intel core 2
+duo with 2 BIOS-chips and 4 Gibi DDR-RAM).
+The dark screen is still an unresolved problem under Debian Squeeze 6.0.4
+After running this attached code, screen is pretty bright.
+The problem with cd-rom-drive is solved too by this attached code.
+Mounting and unmounting cd-rom-drive was a problem too with program brasero.
+brasero did not recognize empty CD/DVD-discs. Now it is solved.
+
+It would substitute many bugfixes and cumbersome configurations
+up to today under Linux too, if I am not wrong.
+It is solving else problems, which pop up, when address-lines in chips like
+BIOS and in RAM are not activated with boolean value TRUE.
+
+
+
+Compile under installed Debian with gcc the attached listing into output file with name: BIOS=RESET
+
+You then need only knoppix 6.7.1 or else live-System.
+This binary works only on a live-System like knoppix.
+In knoppix open a terminal in full-screen-modus.
+Then execute the binary as root: ./BIOS=RESET
+
+It takes between 23 and 25 minutes on an intel core 2 duo with 2 BIOS-chips.
+One BIOS-chip would mean 2097152 possible addresses (to be set as TRUE).
+This is why I set the value of variable mx to 4194304 addresses. This is
+for RAM-size of 4 Gibi.
+The variable mx should stay as mx, because each address in the BIOS-chip
+has the prefix mx, followed by an increasing number starting at zero.
+
+On the whole, this program is setting each address as TRUE, and in the
+end it makes a reset, of all TRUE-values. The whole RAM-Memory is filled
+up with boolean value TRUE. It can get pretty warm.
+
+
+When in the end the message "dunno !" appears, the binary has done its job.
+IMPORTANT !!! You should run this binary only 1 time ! 
+You only need to wait a bit and watch the little green monitor of your processor/RAM
+in the right corner below of knoppix 6.7.1
+It might happen that knoppix "stutter" a bit or hang a bit.
+You can see then, if a flash is happening, in the right corner below.
+After the flash you can re-boot your machine, ( if necessary pull out and put in
+your accumulator of your notebook ). and start your hard-disk installation as usual.
+You will notice by the time, that your Linux is now more stable, and less
+problems are happening.
+
+In Debian Squeeze 6.0.4 program brasero had trouble to recognize discs
+in the combo-drive. This is now solved. And display is brighter than usual.
+The resolution of the screen is sharper.
+
+This code in C is a bit quicker when compiled in assembler.
+
+I would be happy, when you mail me, if this is koscher.
+
+My Linux is now more stable with this binary. I ran this binary only one time.
+
+Of course it is free source-code under GPL 2.0 and GPL 1.0
+
+Happy Hacking. Please do not phone me up. I am deaf.
+
+Regards.
+dschinn
+linux7430@gmail.com
+(Germany) 
