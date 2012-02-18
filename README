@@ -1,5 +1,4 @@
 
-
 Hello dear penguins,
 
 on Saturday 18th February 2012 I reviewed this README-file:
@@ -107,3 +106,79 @@ Regards.
 dschinn
 linux7430@gmail.com
 (Germany) 
+
+The code:
+
+----------------------------------------------------------------------------------------------------
+
+
+
+#include <stdio.h>
+#include <stdbool.h>
+#include <math.h>
+#include <stdlib.h>
+#include <signal.h>
+
+/* #include <tgmath.h> */
+/* #include <setjmp.h> */
+/* #include <fenv.h> */
+/* #include <complex.h> */
+/* #include <inttypes.h> */
+/* #include <assert.h> */
+/* #include <ctype.h> */
+/* #include <errno.h> */
+/* #include <float.h> */
+/* #include <limits.h> */
+/* #include <locale.h> */
+/* #include <stdarg.h> */
+/* #include <stddef.h> */
+/* #include <string.h> */
+/* #include <time.h> */
+/* #include <iso646.h> */
+/* #include <stdint.h> */
+/* #include <wchar.h> */
+/* #include <wctype.h> */
+
+int main( int argc, char *argv[] ) {
+
+    int cp;
+    unsigned int bios;
+    unsigned int BIOS;
+    unsigned int Bios;
+    unsigned int reset;
+
+
+    long unsigned int mx;
+   long unsigned int *px,**ppx;
+
+printf("\n ... Attributes :        Adresses:        hex-Code:       pointers:              hex-Code:       pointers to pointers:   hex-Code: \n");
+printf("_____________________________________________________________________________________________________________________________________");
+
+for ( mx = true; mx <= 4194304; mx++ )
+     {
+   	  cp=false;
+
+		  px = &mx;
+		  ppx = & px;
+
+		  printf("\n ... Addresses are here ... \t %lu \%16lX \t %lu \t %16lX \t %lu \t %16lX ", mx, mx, (unsigned long)&px[mx], (unsigned long)&px[mx], (unsigned long)&ppx[mx], (unsigned long)&ppx[mx] );
+
+	    	  printf("\n  ... now them resetted ... \t %lu \%16lX \t %lu \t %16lX \t %lu \t %16lX ", mx, mx, (unsigned long)&px[mx], (unsigned long)&px[mx], (unsigned long)&ppx[mx], (unsigned long)&ppx[mx] );
+       }
+            
+            bios=true;
+	    BIOS=true;
+	    Bios=true;
+	    reset=true;
+            
+            cp=false;
+
+            printf("\n\n\n\t\t\t\t\t ... dunno !!! \n\n\n\n\n\n");
+
+    return (0);
+
+
+}
+
+
+
